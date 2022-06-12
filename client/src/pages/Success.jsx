@@ -24,7 +24,9 @@ const Success = () => {
           address: data.billing_details.address,
         });
         setOrderId(res.data._id);
-      } catch {}
+      } catch {
+        <div>console.error("error");</div>;
+      }
     };
     data && createOrder();
   }, [cart, data, currentUser]);

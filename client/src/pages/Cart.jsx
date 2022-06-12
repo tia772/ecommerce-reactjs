@@ -148,7 +148,9 @@ const Cart = () => {
           stripeData: res.data,
           products: cart,
         });
-      } catch {}
+      } catch {
+        <div>console.error("error");</div>;
+      }
     };
     stripeToken && makeRequest();
   }, [stripeToken, cart.total, history]);

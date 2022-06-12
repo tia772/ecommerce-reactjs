@@ -133,7 +133,9 @@ const Product = () => {
       try {
         const res = await publicRequest.get("/products/find/" + id);
         setProduct(res.data);
-      } catch {}
+      } catch {
+        <div>console.error("error");</div>;
+      }
     };
     getProduct();
   }, [id]);
